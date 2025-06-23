@@ -1,6 +1,9 @@
 const chatContainer = document.getElementById('chat-container');
 const userInput = document.getElementById('user-input');
 
+// Generate a unique session ID for this conversation
+const sessionId = 'session_' + Date.now();
+
 function appendMessage(message, sender) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${sender}-message`;
@@ -22,7 +25,7 @@ async function sendMessage() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ message })
+            body: JSON.stringify({ message, sessionId })
         });
 
         const data = await response.json();
