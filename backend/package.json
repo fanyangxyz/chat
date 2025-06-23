@@ -4,6 +4,7 @@
     "description": "Backend for Claude Chat Assistant",
     "main": "server.js",
     "dependencies": {
+        "@anthropic-ai/sdk": "^0.54.0",
         "cors": "^2.8.5",
         "dotenv": "^16.0.3",
         "express": "^4.18.2",
